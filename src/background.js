@@ -1,4 +1,4 @@
-chrome.runtime.onInstalled.addListener(function() {
+chrome.runtime.onInstalled.addListener(()=> {
 	chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
 		chrome.declarativeContent.onPageChanged.addRules([{
 			conditions: [
@@ -11,9 +11,9 @@ chrome.runtime.onInstalled.addListener(function() {
 	});
 });
 
-chrome.runtime.onMessage.addListener(function(message) {
-	var url = 'http://localhost:4000/download?';
-	var queryString = Object.keys(message).map(key => key + '=' + message[key]).join('&');
+chrome.runtime.onMessage.addListener((message) => {
+	let url = 'http://localhost:4000/download?';
+	let queryString = Object.keys(message).map(key => key + '=' + message[key]).join('&');
 	url += queryString;
 	console.log(url);
 	chrome.downloads.download({url:url,

@@ -1,10 +1,10 @@
 {
     "name": "YouTube Downloader",
     "version": "1.0",
-    "manifest_version": 2,
+    "manifest_version": 3,
 
     "description": "Download from YouTube",
-    "page_action": {
+    "action": {
         "default_title": "Download from YouTube",
         "default_popup": "popout.html"
     },
@@ -13,8 +13,8 @@
         "activeTab",
         "declarativeContent"
     ],
-    "background" : {
-        "scripts" : ["background.js"],
-        "persistent" : false
-    }
+   "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
 }
