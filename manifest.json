@@ -1,13 +1,12 @@
 {
-    "manifest_version": 2,
-    "name": "Focus",
-    "version": "3.0",
-    "description": "Download videos from youtube to files",
-    "content_scripts": [
-        {
-            "matches": ["https.youtube.com/*"],
-            "js": ["./main.js"]
-
-        }
-    ]
-  }
+  "manifest_version": 2,
+  "name": "Focus",
+  "version": "3.0",
+  "description": "Download videos from youtube to files",
+  "content_scripts": [
+    {
+      "matches": ["https.youtube.com/*"],
+      "js": ["./main.js"]
+    }
+  ]
+}
