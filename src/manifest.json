@@ -11,7 +11,8 @@
     "permissions": [
         "downloads",
         "activeTab",
-        "declarativeContent"
+        "declarativeContent",
+        "scripting"
     ],
    "background": {
     "service_worker": "background.js",
