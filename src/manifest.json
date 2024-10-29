@@ -8,7 +8,7 @@
     "default_title": "Download from YouTube",
     "default_popup": "popout.html"
   },
-  "permissions": ["downloads", "activeTab", "declarativeContent", "scripting"],
+  "permissions": ["downloads", "activeTab", "declarativeContent"],
   "background": {
     "service_worker": "background.js",
     "type": "module"
