@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/IM236/Hackathon#readme",
   "dependencies": {
-    "express": "^4.21.1",
-    "ytdl-core": "^4.11.5"
+    "@distube/ytdl-core": "^4.15.1",
+    "express": "^4.21.1"
   }
 }

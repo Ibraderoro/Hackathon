@@ -14,19 +14,19 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.runtime.onMessage.addListener((message) => {
-  let url = 'http://localhost:4000/download?';
-  let queryString = Object.keys(message)
-    .map((key) => key + '=' + message[key])
-    .join('&');
-  url += queryString;
-  console.log(url);
-  chrome.downloads
-    .download({
-      url: url,
-      filename: 'YoutubeDownloader/' + message.filename + '.' + message.format,
-    })
-    .then((downID) => {
-      chrome.downloads.show(downID);
-    })
-    .catch((error) => console.error('Download failed: ', error));
+	let url = 'http://localhost:4000/download?';
+    // let url = '';
+	let queryString = Object.keys(message).map(key => key + '=' + message[key]).join('&');
+	url += queryString;
+	console.log(url);
+	chrome.downloads.download({url:url,
+		filename: message.filename + '.' + message.format
+	}, function (downID) {
+		console.log("function is running")
+		if (chrome.runtime.lastError) {
+			console.error("Download failed:", chrome.runtime.lastError.message);
+		} else {
+			chrome.downloads.show(downID);
+		}
+	});
 });
