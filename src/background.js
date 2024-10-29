@@ -25,8 +25,5 @@ chrome.runtime.onMessage.addListener((message) => {
       url: url,
       filename: 'YoutubeDownloader/' + message.filename + '.' + message.format,
     })
-    .then((downID) => {
-      chrome.downloads.show(downID);
-    })
-    .catch((error) => console.error('Download failed: ', error));
+
 });

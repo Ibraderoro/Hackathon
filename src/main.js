@@ -23,10 +23,9 @@ window.onload = function () {
   dButton.onclick = function () {
     console.log('button clicked');
     dButton.innerText = 'Downloading file...';
-    let queryOptions = { active: true, lastFocusedWindow: true };
-    chrome.tabs.query(queryOptions, (tab) => {
-      console.log(tab);
-      let url = tab[0].id;
+    let queryOptions = { active: true, currentWindow: true };
+    chrome.tabs.query(queryOptions, (tabs) => {
+      let url = tabs[0].url;
       let message = {
         url: url,
         quality: quality.value,
