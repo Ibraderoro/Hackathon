@@ -1,9 +1,9 @@
 let express = require('express');
 let app = express();
 let ytdl = require('ytdl-core');
-const cors = require('cors');
+// const cors = require('cors');
 
-app.use(cors());
+// app.use(cors());
 app.listen('4000', function(){
 	console.log("listening on 4000");
 });
