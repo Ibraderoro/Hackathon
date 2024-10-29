@@ -23,24 +23,17 @@ window.onload = function () {
   dButton.onclick = function () {
     console.log('button clicked');
     dButton.innerText = 'Downloading file...';
-    chrome.tabs.query(
-      {
-        active: true,
-        lastFocusedWindow: true,
-      },
-      (tabs) => {
-        let url = tabs[0].url;
-        console.log('active tab', url);
-        let message = {
-          'url': url,
-          'quality': quality.value,
-          'filename': filename.value,
-          'format': format.value,
-         
-        };
-         console.log('working', message);
-        chrome.runtime.sendMessage(message);
-      }
-    );
+    let queryOptions = { active: true, lastFocusedWindow: true };
+    chrome.tabs.query(queryOptions, (tab) => {
+      console.log(tab);
+      let url = tab[0].id;
+      let message = {
+        url: url,
+        quality: quality.value,
+        filename: filename.value,
+        format: format.value,
+      };
+      chrome.runtime.sendMessage(message);
+    });
   };
 };
