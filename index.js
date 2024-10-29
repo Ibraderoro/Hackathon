@@ -1,6 +1,6 @@
 let express = require('express');
 let app = express();
-let ytdl = require('ytdl-core');
+let ytdl = require('@distube/ytdl-core');
 // const cors = require('cors');
 
 // app.use(cors());
@@ -17,5 +17,9 @@ app.get('/download', function(req, res) {
 		format:format,
 		quality:quality,
 	});
+
+	res.header('Content-Disposition', `attachment; filename="video.${format}"`);
+	
 	video.pipe(res);
+	console.log(res)
 });

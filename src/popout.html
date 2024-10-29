@@ -6,8 +6,9 @@
 </head>
 <body>
 	<h1>Youtube Downloader</h1>
+    <div id = "menu">
 	<label for="quality">Quality</label>
-	<select id="quality">
+	<select id="quality" style="color:rgb(54, 33, 193);">
 		 <option value="highest">highest</option>
 		 <option value="lowest">lowest</option>
 		 <option value="highestaudio">highestaudio</option>
@@ -15,7 +16,7 @@
 		 <option value="highestvideo">highestvideo</option>
 		 <option value="lowestvideo">lowestvideo</option>
 	</select>
-	<label for="filename">SaveAs</label>
+	<label for="filename">Save As:</label>
 	<input id="filename" placeholder="<filename>">
 	<label for="format">Format</label>
 	<select id="format">
@@ -27,7 +28,7 @@
 		 <option value="mpg">mpg</option>
 	</select>
 	<button id="download">Download</button>
-
+</div>
     <p id="test"></p>
     <script src="main.js"></script>
     <script src="background.js"></script>

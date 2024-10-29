@@ -26,8 +26,8 @@ dButton.onclick = function(){
     let queryOptions = { active: true, lastFocusedWindow: true };
     chrome.tabs.query(queryOptions,
     (tab) => {
-        console.log(tab)
-       let url = tab[0].id;
+        console.log(tab[0])
+       let url = tab[0].url;
         let message = {
             'url': url,
             'quality': quality.value,
